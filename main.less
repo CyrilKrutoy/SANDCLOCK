@@ -1,0 +1,129 @@
+.flex(@aling:center, @just:center) {
+    display: flex;
+    align-items: @aling;
+    justify-content: @just;
+  }
+body{
+    height: 100vh;
+    width: 100vw;
+    .flex(center, center);
+    flex-direction: column;
+}
+.base{
+    position: relative;
+    width: 140px;
+    height: 20px;
+    background: rgb(35, 35, 95);
+    border-radius: 20px ;
+    border: 10px solid white;
+    z-index: 1;
+}
+.up{
+    top:40px;
+}
+.down{
+    top:-40px;
+}
+.sandclock {
+    position: relative;
+    width: 100px;
+    height: 220px;
+    animation: spin 4s linear 0s infinite normal none;
+    overflow: hidden;
+}
+.glass {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;    
+    background: rgb(35, 35, 95);
+    border: 20px solid rgb(35, 35, 95);
+    border-radius: 50px 0 50px 50px;
+    transform: rotate(-45deg);
+    overflow: hidden;     
+}
+.glass2 {
+    left: auto;
+    top: 0;
+    border-radius: 50px 50px 50px 0;
+}
+.sand{
+  position: relative;
+    width: 60px;
+    height: 80px;
+    background: rgb(134, 109, 245);
+    transform: rotate(-45deg);
+}
+.sand1{
+  top: -25px;
+  left: 15px;
+  animation: sandstream1 4s linear 0s infinite normal none;
+}
+.sand2{
+  top: 5px;
+  left: -15px;
+  animation: sandstream2 4s linear 0s infinite normal none;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+    }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+      transform: rotate(360deg);
+    }
+  100% {
+      transform: rotate(360deg);
+    }
+}
+@keyframes sandstream1 {
+  0% { 
+    top: -25px;
+    left: 15px;
+  }
+  25% {
+    top: -55px;
+    left: 45px; 
+  } 
+  50% {
+    top: -65px;
+    left: 55px;
+  } 
+  75% { 
+    top: -55px;
+    left: 45px; 
+  }
+  100% { 
+    top: -25px;
+    left: 15px;
+  }
+}
+@keyframes sandstream2 {
+  0% { 
+    top: 45px;
+    left: -55px;     
+  }
+  25% {
+    top: 20px;
+    left: -30px; 
+  } 
+  50% {
+    top: 5px;
+  left: -15px;
+  } 
+  75% { 
+    top: 20px;
+    left: -30px; 
+  }
+  100% { 
+    top: 45px;
+    left: -55px;
+  }
+}
